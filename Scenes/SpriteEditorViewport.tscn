@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/CameraMovement.gd" type="Script" id=1]
+[ext_resource path="res://Assets/background.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/SpriteProjectRenderer.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/SpriteItemRenderer.tscn" type="PackedScene" id=5]
+
+[node name="SpriteEditorViewport" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+script = ExtResource( 1 )
+
+[node name="Scale" type="Node2D" parent="."]
+scale = Vector2( 10, 10 )
+
+[node name="Background" type="Sprite" parent="Scale"]
+z_index = -100
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 3050, 1814 )
+
+[node name="SpriteProjectRenderer" type="Node2D" parent="Scale"]
+script = ExtResource( 4 )
+sprite_item_renderer_scene = ExtResource( 5 )

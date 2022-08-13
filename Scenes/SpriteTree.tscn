@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/SpriteProjectTree.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Default.tres" type="Theme" id=2]
+
+[node name="SpriteTree" type="Tree"]
+margin_right = 301.0
+margin_bottom = 810.0
+theme = ExtResource( 2 )
+allow_rmb_select = true
+script = ExtResource( 1 )
+editor_path = NodePath("../../..")
+
+[node name="Popup" type="PopupMenu" parent="."]
+margin_right = 112.0
+margin_bottom = 200.0
+items = [ "Add Child", null, 0, false, false, 0, 0, null, "", false, "Rename", null, 0, false, false, 1, 0, null, "", false, "", null, 0, false, false, -1, 0, null, "", true, "Cut", null, 0, false, false, 2, 0, null, "", false, "Copy", null, 0, false, false, 3, 0, null, "", false, "Paste Into", null, 0, false, false, 4, 0, null, "", false, "", null, 0, false, false, -1, 0, null, "", true, "Delete", null, 0, false, false, 5, 0, null, "", false ]
+
+[connection signal="item_rmb_selected" from="." to="." method="_on_item_rmb_selected"]
+[connection signal="item_selected" from="." to="." method="_on_item_selected"]
+[connection signal="id_pressed" from="Popup" to="." method="_on_id_pressed"]
