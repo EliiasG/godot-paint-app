@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/CameraController.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/GridLines.gd" type="Script" id=2]
 [ext_resource path="res://Assets/background.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/SpriteProjectRenderer.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/SpriteItemRenderer.tscn" type="PackedScene" id=5]
@@ -10,9 +11,14 @@
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 script = ExtResource( 1 )
+max_zoom = 10.0
+min_zoom = 0.2
+
+[node name="GridLines" type="Node2D" parent="Camera2D"]
+script = ExtResource( 2 )
 
 [node name="Scale" type="Node2D" parent="."]
-scale = Vector2( 10, 10 )
+scale = Vector2( 100, 100 )
 
 [node name="Background" type="Sprite" parent="Scale"]
 z_index = -100

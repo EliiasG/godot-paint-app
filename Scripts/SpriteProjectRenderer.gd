@@ -13,3 +13,4 @@ func _ready() -> void:
 	root_item.sprite_item = _editor.sprite_project.root
 	root_item.camera = _camera
 	add_child(root_item)
+	root_item.setup()

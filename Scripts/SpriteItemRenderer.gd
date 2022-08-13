@@ -10,7 +10,7 @@ onready var _shape: Node2D = $Shape
 onready var _children: Node2D = $Children
 
 
-func _ready() -> void:
+func setup() -> void:
 	sprite_item.connect("changed", self, "redraw_shape")
 	sprite_item.connect("children_changed", self, "redraw_children")
 	redraw_shape()
@@ -33,7 +33,7 @@ func redraw_shape() -> void:
 	
 	_shape.add_child(new_shape)
 	
-	if sprite_item.is_selected:
+	if sprite_item.is_selected and sprite_item.parent != null:
 		var marker: SpriteItemRootMarker = marker_scene.instance()
 		marker.sprite_item = sprite_item
 		marker.camera = camera
@@ -47,3 +47,4 @@ func redraw_children() -> void:
 		new_child.sprite_item = child
 		new_child.camera = camera
 		_children.add_child(new_child)
+		new_child.setup()

@@ -2,12 +2,6 @@ extends Node
 
 var mouse_position: Vector2
 
-var grid_size: float = 0.1
-
-const WIDTH: int = 1440
-const HEIGHT: int = 810
-
-
 func swap(array: Array, index1: int, index2: int) -> void:
 	var tmp = array[index1]
 	array[index1] = array[index2]
