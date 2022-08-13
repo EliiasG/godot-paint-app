@@ -14,6 +14,11 @@ func add_vertex(vertex: Vector2) -> void:
 	emit_changed()
 
 
+func insert_vertex(index: int, vertex: Vector2) -> void:
+	_vertices.insert(index, vertex)
+	emit_changed()
+
+
 func set_vertex(index: int, vertex: Vector2) -> void:
 	_vertices.set(index, vertex)
 	emit_changed()
