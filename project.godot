@@ -29,6 +29,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/SpriteItem.gd"
 }, {
+"base": "Node2D",
+"class": "SpriteItemCornerMarker",
+"language": "GDScript",
+"path": "res://Scripts/SpriteItemCornerMarker.gd"
+}, {
 "base": "Resource",
 "class": "SpriteItemModifier",
 "language": "GDScript",
@@ -74,6 +79,7 @@ _global_script_class_icons={
 "NumberProperty": "",
 "Property": "",
 "SpriteItem": "",
+"SpriteItemCornerMarker": "",
 "SpriteItemModifier": "",
 "SpriteItemRenderer": "",
 "SpriteItemRootMarker": "",

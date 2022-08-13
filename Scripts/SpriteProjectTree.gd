@@ -65,7 +65,7 @@ func _on_item_rmb_selected(position: Vector2) -> void:
 
 
 func _on_item_selected() -> void:
-	if _selected_item is SpriteItem:
+	if _selected_item != null:
 		_selected_item.is_selected = false
 	_selected_item = _sprite_item_dictionary[get_selected()]
 	_selected_item.is_selected = true

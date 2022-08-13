@@ -2,7 +2,7 @@ class_name SpriteItemRootMarker
 extends Node2D
 
 
-var sprite_item: SpriteItem
+var sprite_item: Resource
 var camera: CameraController
 
 

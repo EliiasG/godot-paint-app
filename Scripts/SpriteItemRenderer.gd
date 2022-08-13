@@ -2,6 +2,7 @@ class_name SpriteItemRenderer
 extends Node2D
 
 export var marker_scene: PackedScene
+export var corner_scene: PackedScene
 
 var sprite_item: Resource
 var camera: CameraController
@@ -38,6 +39,14 @@ func redraw_shape() -> void:
 		marker.sprite_item = sprite_item
 		marker.camera = camera
 		_shape.add_child(marker)
+		
+		for i in range(len(sprite_item.shape.get_vertecies())):
+			var corner: SpriteItemCornerMarker = corner_scene.instance()
+			corner.shape = sprite_item.shape
+			corner.index = i
+			corner.position = sprite_item.shape.get_vertecies()[i]
+			corner.camera = camera
+			_shape.add_child(corner)
 
 
 func redraw_children() -> void:

@@ -5,7 +5,7 @@ export var number_property_scene: PackedScene
 export var property_row_path: NodePath
 export var name_label_path: NodePath
 
-var _selected_item: SpriteItem
+var _selected_item: Resource
 
 onready var _property_row: Control = get_node(property_row_path)
 onready var _sprite_project_tree: SpriteProjectTree = get_node(sprite_project_tree_path)
@@ -16,7 +16,7 @@ func _ready() -> void:
 	_sprite_project_tree.connect("selected_item", self, "_item_selected")
 
 
-func _item_selected(new_item: SpriteItem) -> void:
+func _item_selected(new_item: Resource) -> void:
 	_selected_item = new_item
 	_name_label.text = new_item.name
 	Util.clear(_property_row)
