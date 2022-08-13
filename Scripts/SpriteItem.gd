@@ -13,6 +13,8 @@ export var parent: Resource = null setget set_parent
 export(Array, Resource) var _modifiers: Array
 export(Array, Resource) var _children: Array
 
+var is_selected: bool = false setget set_is_selected
+
 func _init() -> void:
 	_children = []
 	_modifiers = []
@@ -93,6 +95,11 @@ func set_parent(new_value: Resource) -> void:
 		#not using add_child() as it sets the parent and would cause recursion
 		parent._children.append(self)
 		parent.emit_signal("children_changed")
+
+
+func set_is_selected(new_value: bool) -> void:
+	is_selected = new_value
+	emit_changed()
 
 
 func add_modifier(modifier: Resource) -> void:

@@ -1,3 +1,4 @@
+class_name SpriteProjectTree
 extends Tree
 
 export var editor_path: NodePath
@@ -6,6 +7,7 @@ signal selected_item(new_item)
 
 var _sprite_item_dictionary: Dictionary = {}# TreeItem: SpriteItem
 var _clipboard: Resource = null
+var _selected_item: Resource = null
 
 onready var _popup: PopupMenu = $Popup
 onready var _editor: SpriteProjectEditor = get_node(editor_path)
@@ -63,7 +65,11 @@ func _on_item_rmb_selected(position: Vector2) -> void:
 
 
 func _on_item_selected() -> void:
-	emit_signal("selected_item", _sprite_item_dictionary[get_selected()])
+	if _selected_item is SpriteItem:
+		_selected_item.is_selected = false
+	_selected_item = _sprite_item_dictionary[get_selected()]
+	_selected_item.is_selected = true
+	emit_signal("selected_item", _selected_item)
 
 
 func _rename_sprite_item(sprite_item: Resource) -> bool:

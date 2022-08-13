@@ -1,3 +1,4 @@
+class_name CameraController
 extends Camera2D
 
 
@@ -12,7 +13,7 @@ var _old_mouse_psoition: Vector2 = Vector2.ZERO
 var _current_zoom: float = 1
 
 func _process(_delta: float) -> void:
-	var mouse_position: Vector2 = get_viewport().get_parent().get_viewport().get_mouse_position()
+	var mouse_position: Vector2 = Util.mouse_position
 	var viewport_parent: ViewportContainer = get_viewport().get_parent()
 	var position_limit: Vector2 = get_viewport().size / 2
 	
@@ -33,3 +34,6 @@ func _process(_delta: float) -> void:
 	position = Vector2(clamp(position.x, -position_limit.x, position_limit.x), clamp(position.y, -position_limit.y, position_limit.y))
 	
 	_old_mouse_psoition = mouse_position
+
+func get_fixed_mouse_position() -> Vector2:
+	return (Util.mouse_position - Vector2(Util.WIDTH / 2, Util.HEIGHT / 2)) * _current_zoom + global_position

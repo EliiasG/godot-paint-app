@@ -1,11 +1,13 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scripts/Properties/Property.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Default.tres" type="Theme" id=2]
 
 [node name="Property" type="Control"]
 margin_right = 323.0
 margin_bottom = 25.0
 rect_min_size = Vector2( 0, 25 )
+theme = ExtResource( 2 )
 script = ExtResource( 1 )
 
 [node name="Label" type="Label" parent="."]

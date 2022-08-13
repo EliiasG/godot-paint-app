@@ -51,5 +51,6 @@ render_target_update_mode = 3
 editor_path = NodePath("../../../../../../..")
 
 [node name="Inspector" parent="HSplitContainer" instance=ExtResource( 6 )]
+sprite_project_tree_path = NodePath("../HSplitContainer/SpriteTree")
 
 [editable path="HSplitContainer/HSplitContainer/ViewportContainer/Viewport/SpriteEditorViewport"]
