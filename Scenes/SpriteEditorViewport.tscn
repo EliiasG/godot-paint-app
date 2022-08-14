@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/CameraController.gd" type="Script" id=1]
-[ext_resource path="res://Scripts/GridLines.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/UI/GridLines.gd" type="Script" id=2]
 [ext_resource path="res://Assets/background.png" type="Texture" id=3]
-[ext_resource path="res://Scripts/SpriteProjectRenderer.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/UI/SpriteProjectRenderer.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/SpriteItemRenderer.tscn" type="PackedScene" id=5]
 
 [node name="SpriteEditorViewport" type="Node2D"]

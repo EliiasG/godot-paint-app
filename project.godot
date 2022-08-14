@@ -22,7 +22,7 @@ _global_script_classes=[ {
 "base": "ColorRect",
 "class": "ColorSelectButton",
 "language": "GDScript",
-"path": "res://Scripts/ColorSelectButton.gd"
+"path": "res://Scripts/UI/ColorSelectButton.gd"
 }, {
 "base": "Property",
 "class": "NumberProperty",
@@ -37,7 +37,7 @@ _global_script_classes=[ {
 "base": "Resource",
 "class": "SpriteItem",
 "language": "GDScript",
-"path": "res://Scripts/SpriteItem.gd"
+"path": "res://Scripts/Resources/SpriteItem.gd"
 }, {
 "base": "Node2D",
 "class": "SpriteItemCornerMarker",
@@ -62,27 +62,27 @@ _global_script_classes=[ {
 "base": "Resource",
 "class": "SpriteItemShape",
 "language": "GDScript",
-"path": "res://Scripts/SpriteItemShape.gd"
+"path": "res://Scripts/Resources/SpriteItemShape.gd"
 }, {
 "base": "Resource",
 "class": "SpriteProject",
 "language": "GDScript",
-"path": "res://Scripts/SpriteProject.gd"
+"path": "res://Scripts/Resources/SpriteProject.gd"
 }, {
 "base": "Control",
 "class": "SpriteProjectEditor",
 "language": "GDScript",
-"path": "res://Scripts/SpriteProjectEditor.gd"
+"path": "res://Scripts/UI/SpriteProjectEditor.gd"
 }, {
 "base": "Node2D",
 "class": "SpriteProjectRenderer",
 "language": "GDScript",
-"path": "res://Scripts/SpriteProjectRenderer.gd"
+"path": "res://Scripts/UI/SpriteProjectRenderer.gd"
 }, {
 "base": "Tree",
 "class": "SpriteProjectTree",
 "language": "GDScript",
-"path": "res://Scripts/SpriteProjectTree.gd"
+"path": "res://Scripts/UI/SpriteProjectTree.gd"
 } ]
 _global_script_class_icons={
 "CameraController": "",
@@ -110,10 +110,10 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Util="*res://Scenes/Util.tscn"
-State="*res://Scenes/State.tscn"
-ColorWindow="*res://Scenes/ColorWindow.tscn"
-InputWindow="*res://Scenes/InputWindow.tscn"
+Util="*res://Scenes/Autoload/Util.tscn"
+State="*res://Scenes/Autoload/State.tscn"
+ColorWindow="*res://Scenes/Autoload/ColorWindow.tscn"
+InputWindow="*res://Scenes/Autoload/InputWindow.tscn"
 PaletteSetter="*res://Scenes/PaletteSetter.tscn"
 
 [display]

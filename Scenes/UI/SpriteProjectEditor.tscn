@@ -1,13 +1,13 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/SpriteEditorViewport.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/SpriteTree.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/UI/SpriteTree.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Default.tres" type="Theme" id=3]
-[ext_resource path="res://Scripts/SpriteProjectEditor.gd" type="Script" id=4]
-[ext_resource path="res://Scripts/SpriteProject.gd" type="Script" id=5]
-[ext_resource path="res://Scenes/Inspector.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scripts/UI/SpriteProjectEditor.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/Resources/SpriteProject.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/UI/Inspector.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/montserrat_extrabold.otf" type="DynamicFontData" id=7]
-[ext_resource path="res://Scripts/GridSizeLabel.gd" type="Script" id=8]
+[ext_resource path="res://Scripts/UI/GridSizeLabel.gd" type="Script" id=8]
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 5 )

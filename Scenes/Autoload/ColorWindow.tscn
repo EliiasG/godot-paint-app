@@ -2,9 +2,9 @@
 
 [ext_resource path="res://Assets/Default.tres" type="Theme" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
-[ext_resource path="res://Scripts/ColorWindow.gd" type="Script" id=3]
-[ext_resource path="res://Scenes/ColorSelectButton.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scripts/ScrollContainerFix.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/Autoload/ColorWindow.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/UI/ColorSelectButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scripts/UI/ScrollContainerFix.gd" type="Script" id=5]
 
 [node name="ColorWindow" type="CanvasLayer"]
 pause_mode = 2
