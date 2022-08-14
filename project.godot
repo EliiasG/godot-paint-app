@@ -19,7 +19,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/Properties/ColorProperty.gd"
 }, {
-"base": "ColorRect",
+"base": "Reference",
 "class": "ColorSelectButton",
 "language": "GDScript",
 "path": "res://Scripts/UI/ColorSelectButton.gd"
@@ -64,17 +64,17 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/Resources/SpriteItemShape.gd"
 }, {
-"base": "Resource",
+"base": "Reference",
 "class": "SpriteProject",
 "language": "GDScript",
 "path": "res://Scripts/Resources/SpriteProject.gd"
 }, {
-"base": "Control",
+"base": "Reference",
 "class": "SpriteProjectEditor",
 "language": "GDScript",
 "path": "res://Scripts/UI/SpriteProjectEditor.gd"
 }, {
-"base": "Node2D",
+"base": "Reference",
 "class": "SpriteProjectRenderer",
 "language": "GDScript",
 "path": "res://Scripts/UI/SpriteProjectRenderer.gd"
@@ -83,6 +83,21 @@ _global_script_classes=[ {
 "class": "SpriteProjectTree",
 "language": "GDScript",
 "path": "res://Scripts/UI/SpriteProjectTree.gd"
+}, {
+"base": "Tab",
+"class": "StartMenuTab",
+"language": "GDScript",
+"path": "res://Scripts/Tabs/StartMenuTab.gd"
+}, {
+"base": "Node",
+"class": "Tab",
+"language": "GDScript",
+"path": "res://Scripts/Tabs/Tab.gd"
+}, {
+"base": "Tabs",
+"class": "TabManager",
+"language": "GDScript",
+"path": "res://Scripts/TabManager.gd"
 } ]
 _global_script_class_icons={
 "CameraController": "",
@@ -99,7 +114,10 @@ _global_script_class_icons={
 "SpriteProject": "",
 "SpriteProjectEditor": "",
 "SpriteProjectRenderer": "",
-"SpriteProjectTree": ""
+"SpriteProjectTree": "",
+"StartMenuTab": "",
+"Tab": "",
+"TabManager": ""
 }
 
 [application]

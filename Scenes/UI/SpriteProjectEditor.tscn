@@ -21,10 +21,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 3 )
 script = ExtResource( 4 )
-__meta__ = {
-"_edit_horizontal_guides_": [ 417.0, 0.0, 54.0 ],
-"_edit_vertical_guides_": [ 16.0, 0.0, -216.0 ]
-}
 sprite_project = SubResource( 1 )
 
 [node name="HSplitContainer" type="HSplitContainer" parent="."]
@@ -70,7 +66,7 @@ margin_top = -48.0
 margin_right = 99.0
 custom_colors/font_color = Color( 0, 0, 0, 0.705882 )
 custom_fonts/font = SubResource( 2 )
-text = "Grid size: 1/8"
+text = "Loading..."
 align = 1
 valign = 2
 script = ExtResource( 8 )
