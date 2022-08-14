@@ -5,8 +5,11 @@ extends Node2D
 var sprite_item: Resource
 var camera: CameraController
 
+onready var _icon: Node2D = $Icon
+onready var _original_scale = _icon.scale
 
 func _process(delta: float) -> void:
+	_icon.scale = _original_scale * camera.zoom
 	if Input.is_action_pressed("control") and Input.is_action_pressed("click"):
 		#the following line sets the position of the SpriteItem to the position of the mouse, snapping to the grid
 		#it is a mess

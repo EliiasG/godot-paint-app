@@ -21,7 +21,8 @@ script = ExtResource( 2 )
 scale = Vector2( 100, 100 )
 
 [node name="Background" type="Sprite" parent="Scale"]
-z_index = -100
+modulate = Color( 0.803922, 0.803922, 0.803922, 1 )
+z_index = -4096
 texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 3050, 1814 )

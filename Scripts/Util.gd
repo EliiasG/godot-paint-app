@@ -17,4 +17,5 @@ func clear(node: Node) -> void:
 	for child in node.get_children():
 		child.queue_free()
 
-
+func snap(vector: Vector2, grid_size: float):
+	return (vector / grid_size - Vector2(0.5, 0.5)).ceil() * grid_size

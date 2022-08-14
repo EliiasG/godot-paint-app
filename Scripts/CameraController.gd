@@ -15,7 +15,7 @@ var _current_zoom: float = 1
 func _process(_delta: float) -> void:
 	var mouse_position: Vector2 = Util.mouse_position
 	var viewport_parent: ViewportContainer = get_viewport().get_parent()
-	var position_limit: Vector2 = get_viewport().size / 2
+	var position_limit: Vector2 = get_viewport().size * 5
 	
 	if mouse_position.x > viewport_parent.rect_global_position.x and mouse_position.x < viewport_parent.rect_global_position.x + get_viewport().size.x:
 		if Input.is_action_pressed("drag"):

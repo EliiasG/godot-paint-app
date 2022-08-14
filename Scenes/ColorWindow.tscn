@@ -1,0 +1,70 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Default.tres" type="Theme" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/ColorWindow.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/ColorSelectButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scripts/ScrollContainerFix.gd" type="Script" id=5]
+
+[node name="ColorWindow" type="CanvasLayer"]
+pause_mode = 2
+layer = 11
+script = ExtResource( 3 )
+color_button_container = NodePath("ColorUI/Panel/ScrollContainer/ColorButtonContainer")
+color_select_button_scene = ExtResource( 4 )
+
+[node name="ColorUI" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+
+[node name="Panel" type="Panel" parent="ColorUI"]
+pause_mode = 2
+anchor_left = 0.325
+anchor_top = 0.134
+anchor_right = 0.675
+anchor_bottom = 0.866
+margin_left = -3.05176e-05
+margin_top = -15.54
+margin_right = 20.0
+margin_bottom = 0.539978
+mouse_filter = 2
+
+[node name="TextureButton" type="TextureButton" parent="ColorUI/Panel"]
+modulate = Color( 1, 0, 0, 1 )
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -25.0
+margin_bottom = 25.0
+texture_normal = ExtResource( 2 )
+expand = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ColorUI/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -230.0
+margin_top = -271.5
+margin_right = 230.0
+margin_bottom = 271.5
+mouse_filter = 2
+follow_focus = true
+scroll_horizontal_enabled = false
+script = ExtResource( 5 )
+
+[node name="ColorButtonContainer" type="GridContainer" parent="ColorUI/Panel/ScrollContainer"]
+mouse_filter = 2
+columns = 16
+
+[node name="Label" type="Label" parent="ColorUI/Panel"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -104.5
+margin_right = 104.5
+margin_bottom = 26.0
+text = "Select a color:"
+align = 1
+
+[connection signal="pressed" from="ColorUI/Panel/TextureButton" to="." method="_close_button_pressed"]

@@ -47,34 +47,35 @@ margin_bottom = 47.5
 alignment = 1
 
 [node name="Label" type="Label" parent="InputUI/Panel/VBoxContainer"]
+margin_top = 4.0
 margin_right = 345.0
-margin_bottom = 29.0
+margin_bottom = 30.0
 text = "Label"
 align = 1
 
 [node name="LineEdit" type="LineEdit" parent="InputUI/Panel/VBoxContainer"]
-margin_top = 33.0
+margin_top = 34.0
 margin_right = 345.0
-margin_bottom = 62.0
+margin_bottom = 60.0
 text = "Text"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="InputUI/Panel/VBoxContainer"]
-margin_top = 66.0
+margin_top = 64.0
 margin_right = 345.0
-margin_bottom = 95.0
+margin_bottom = 90.0
 alignment = 1
 
 [node name="ConfirmButton" type="Button" parent="InputUI/Panel/VBoxContainer/HBoxContainer"]
-margin_left = 89.0
-margin_right = 177.0
-margin_bottom = 29.0
+margin_left = 98.0
+margin_right = 176.0
+margin_bottom = 26.0
 action_mode = 0
 text = "Confirm"
 
 [node name="CancelButton" type="Button" parent="InputUI/Panel/VBoxContainer/HBoxContainer"]
-margin_left = 181.0
-margin_right = 256.0
-margin_bottom = 29.0
+margin_left = 180.0
+margin_right = 247.0
+margin_bottom = 26.0
 action_mode = 0
 text = "Cancel"
 

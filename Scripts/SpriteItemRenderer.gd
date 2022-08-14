@@ -6,6 +6,7 @@ export var corner_scene: PackedScene
 
 var sprite_item: Resource
 var camera: CameraController
+var selected: bool = false
 
 onready var _shape: Node2D = $Shape
 onready var _children: Node2D = $Children
@@ -21,6 +22,7 @@ func setup() -> void:
 func redraw_shape() -> void:
 	position = sprite_item.position
 	name = sprite_item.name
+	z_index = sprite_item.layer
 	var new_shape: Polygon2D = Polygon2D.new()
 	new_shape.name = "Shape"
 	new_shape.polygon = sprite_item.shape.get_vertecies()
@@ -33,8 +35,8 @@ func redraw_shape() -> void:
 	Util.clear(_shape)
 	
 	_shape.add_child(new_shape)
-	
-	if sprite_item.is_selected and sprite_item.parent != null:
+	selected = sprite_item.is_selected and sprite_item.parent != null
+	if selected:
 		var marker: SpriteItemRootMarker = marker_scene.instance()
 		marker.sprite_item = sprite_item
 		marker.camera = camera
@@ -48,6 +50,9 @@ func redraw_shape() -> void:
 			corner.camera = camera
 			_shape.add_child(corner)
 
+func _process(delta: float) -> void:
+	if selected and Input.is_action_pressed("shift") and Input.is_action_just_pressed("click"):
+		sprite_item.shape.add_vertex(to_local(Util.snap(camera.get_fixed_mouse_position(), State.grid_size * 100)))
 
 func redraw_children() -> void:
 	Util.clear(_children)

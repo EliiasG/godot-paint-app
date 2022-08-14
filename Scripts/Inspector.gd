@@ -2,6 +2,7 @@ extends Panel
 
 export var sprite_project_tree_path: NodePath
 export var number_property_scene: PackedScene
+export var color_property_scene: PackedScene
 export var property_row_path: NodePath
 export var name_label_path: NodePath
 
@@ -27,7 +28,16 @@ func _item_selected(new_item: Resource) -> void:
 		layer_property.is_int = true
 		layer_property.connect("value_changed", self, "_layer_changed")
 		_property_row.add_child(layer_property)
+		var color_property: ColorProperty = color_property_scene.instance()
+		color_property.value = _selected_item.color
+		color_property.text = "Color"
+		color_property.connect("value_changed", self, "_color_changed")
+		_property_row.add_child(color_property)
 
 
 func _layer_changed(new_value: float) -> void:
 	_selected_item.layer = int(new_value)
+
+
+func _color_changed(new_value: Color) -> void:
+	_selected_item.color = new_value

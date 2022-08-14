@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/Default.tres" type="Theme" id=1]
+[ext_resource path="res://Scenes/Properties/ColorProperty.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Properties/NumberProperty.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scripts/Inspector.gd" type="Script" id=4]
 
@@ -15,6 +16,7 @@ __meta__ = {
 "_edit_vertical_guides_": [  ]
 }
 number_property_scene = ExtResource( 3 )
+color_property_scene = ExtResource( 2 )
 property_row_path = NodePath("VBoxContainer/PropertyRow")
 name_label_path = NodePath("VBoxContainer/Label")
 
