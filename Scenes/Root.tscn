@@ -35,11 +35,13 @@ rect_min_size = Vector2( 1440, 40 )
 tab_align = 0
 scrolling_enabled = false
 script = ExtResource( 1 )
+content_container_path = NodePath("../Content")
 
 [node name="Panel" type="Panel" parent="UI/Main/VBoxContainer/TabManager"]
 show_behind_parent = true
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 1
 
 [node name="Content" type="Control" parent="UI/Main/VBoxContainer"]
 margin_top = 44.0

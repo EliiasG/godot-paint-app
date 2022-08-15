@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Default.tres" type="Theme" id=1]
+[ext_resource path="res://Assets/montserrat_extrabold.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://Scenes/ProjectManager.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 2 )
+
+[node name="ProjectManager" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -306.0
+margin_top = -74.5
+margin_right = 306.0
+margin_bottom = 74.5
+text = "Path not loaded"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -306.0
+margin_top = -263.0
+margin_right = 306.0
+margin_bottom = -114.0
+custom_fonts/font = SubResource( 1 )
+text = "Project manager placeholder"
+align = 1
+valign = 1

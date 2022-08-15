@@ -2,6 +2,9 @@ class_name StartMenuTab
 extends Tab
 
 
+var content: Control
+
+
 var _start_menu_scene: PackedScene = preload("res://Scenes/UI/StartScreen.tscn")
 
 func _can_be_closed() -> bool:
@@ -13,8 +16,10 @@ func _get_name() -> String:
 
 
 func _get_content() -> Control:
-	return _start_menu_scene.instance() as Control
+	if not content is Control:
+		content = _start_menu_scene.instance()
+	return content
 
 
 func _close() -> bool:
-	return false
+	return true

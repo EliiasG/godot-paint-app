@@ -13,8 +13,15 @@ func open_tab(tab: Tab) -> void:
 	tabs.append(tab)
 	add_tab(tab._get_name())
 	var new_content: Control = tab._get_content()
-	new_content.visible = false
+	new_content.visible = len(tabs) == 1
 	_content_container.add_child(new_content)
+
+
+func get_tab_from_content(content: Control) -> Tab:
+	for tab in tabs:
+		if tab._get_content() == content:
+			return tab
+	return null
 
 
 func close(tab: Tab) -> void:
@@ -25,18 +32,18 @@ func _ready() -> void:
 	State.tab_manager = self
 	connect("tab_close", self, "_close_index")
 	connect("tab_changed", self, "_tab_changed")
-	add_tab("Start Menu")
-	add_tab("Test")
+	open_tab(StartMenuTab.new())
 
 
 func _close_index(index: int) -> void:
 	if tabs[index]._close():
 		remove_tab(index)
-		_content_container.remove_child(get_child(index))
+		_content_container.remove_child(_content_container.get_child(index))
 		tabs.remove(index)
 
 
 func _tab_changed(index: int) -> void:
+	print("change")
 	var tab: Tab = tabs[index]
 	_content_container.get_child(old_index).visible = false
 	_content_container.get_child(index).visible = true

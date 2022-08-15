@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/Default.tres" type="Theme" id=1]
 [ext_resource path="res://Assets/montserrat_extrabold.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://Scripts/UI/StartScreen.gd" type="Script" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -11,8 +12,9 @@ font_data = ExtResource( 2 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 1 )
+script = ExtResource( 3 )
 
-[node name="Button" type="Button" parent="."]
+[node name="OpenButton" type="Button" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -23,3 +25,23 @@ margin_right = 155.0
 margin_bottom = 51.0
 custom_fonts/font = SubResource( 1 )
 text = "Open Folder"
+
+[node name="FileDialog" type="FileDialog" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -454.5
+margin_top = -347.0
+margin_right = 454.5
+margin_bottom = 347.0
+window_title = ""
+dialog_text = "Select a folder"
+mode_overrides_title = false
+mode = 2
+access = 2
+current_dir = "/"
+current_path = "/"
+
+[connection signal="pressed" from="OpenButton" to="." method="_open_button_pressed"]
+[connection signal="dir_selected" from="FileDialog" to="." method="_dir_selected"]
