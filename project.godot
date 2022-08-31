@@ -30,6 +30,16 @@ _global_script_classes=[ {
 "path": "res://Scripts/Properties/NumberProperty.gd"
 }, {
 "base": "Control",
+"class": "ProjectManager",
+"language": "GDScript",
+"path": "res://Scripts/UI/ProjectManager.gd"
+}, {
+"base": "Tab",
+"class": "ProjectManagerTab",
+"language": "GDScript",
+"path": "res://Scripts/Tabs/ProjectManagerTab.gd"
+}, {
+"base": "Control",
 "class": "Property",
 "language": "GDScript",
 "path": "res://Scripts/Properties/Property.gd"
@@ -89,7 +99,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/Tabs/StartMenuTab.gd"
 }, {
-"base": "Reference",
+"base": "Control",
 "class": "StartScreen",
 "language": "GDScript",
 "path": "res://Scripts/UI/StartScreen.gd"
@@ -109,6 +119,8 @@ _global_script_class_icons={
 "ColorProperty": "",
 "ColorSelectButton": "",
 "NumberProperty": "",
+"ProjectManager": "",
+"ProjectManagerTab": "",
 "Property": "",
 "SpriteItem": "",
 "SpriteItemCornerMarker": "",
@@ -216,6 +228,11 @@ delete={
 shift={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":16777237,"unicode":0,"echo":false,"script":null)
+ ]
+}
+alt={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":16777240,"unicode":0,"echo":false,"script":null)
  ]
 }
 

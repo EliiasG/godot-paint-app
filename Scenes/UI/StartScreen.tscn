@@ -40,8 +40,8 @@ dialog_text = "Select a folder"
 mode_overrides_title = false
 mode = 2
 access = 2
-current_dir = "/"
-current_path = "/"
+current_dir = "/Projects/Git/godot-paint-app/Testing"
+current_path = "/Projects/Git/godot-paint-app/Testing/"
 
 [connection signal="pressed" from="OpenButton" to="." method="_open_button_pressed"]
 [connection signal="dir_selected" from="FileDialog" to="." method="_dir_selected"]

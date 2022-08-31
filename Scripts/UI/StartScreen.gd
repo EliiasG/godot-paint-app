@@ -11,5 +11,5 @@ func _open_button_pressed() -> void:
 
 func _dir_selected(dir: String) -> void:
 	var tab_manager = State.tab_manager
-	
+	tab_manager.open_tab(ProjectManagerTab.new(dir))
 	tab_manager.close(tab_manager.get_tab_from_content(self))

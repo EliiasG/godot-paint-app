@@ -2,6 +2,7 @@ class_name SpriteProjectTree
 extends Tree
 
 export var editor_path: NodePath
+export var item_icon: Texture
 
 signal selected_item(new_item)
 
@@ -44,6 +45,7 @@ func _draw_sprite_item(closed_items: Array, parent: TreeItem, sprite_item: Resou
 	var new_tree_item: TreeItem = create_item(parent)
 	new_tree_item.set_text(0, sprite_item.name)
 	new_tree_item.collapsed = closed_items.has(sprite_item)
+	new_tree_item.set_icon(0, item_icon)
 	#new_tree_item.set_cell_mode(1, TreeItem.CELL_MODE_RANGE)
 	#new_tree_item.set_range_config(1, 0, 100, 1, false)
 	

@@ -3,6 +3,7 @@ extends Tabs
 
 var tabs: Array = Array()
 
+
 export var content_container_path: NodePath
 
 var old_index: int = 0
@@ -40,10 +41,12 @@ func _close_index(index: int) -> void:
 		remove_tab(index)
 		_content_container.remove_child(_content_container.get_child(index))
 		tabs.remove(index)
+	
+	if index == old_index and len(tabs) > 0:
+		_tab_changed(index)
 
 
 func _tab_changed(index: int) -> void:
-	print("change")
 	var tab: Tab = tabs[index]
 	_content_container.get_child(old_index).visible = false
 	_content_container.get_child(index).visible = true

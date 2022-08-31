@@ -17,5 +17,32 @@ func clear(node: Node) -> void:
 	for child in node.get_children():
 		child.queue_free()
 
+
 func snap(vector: Vector2, grid_size: float):
 	return (vector / grid_size - Vector2(0.5, 0.5)).ceil() * grid_size
+
+
+func copy_dir(path: String, to: String) -> void:
+	var dir: Directory = Directory.new()
+	var new_path: String = to + "/" + get_name_from_path(path)
+	dir.make_dir(new_path)
+	print("Made dir: " + new_path)
+	if dir.open(path) == OK:
+		dir.list_dir_begin(true, true)
+		var file_name = dir.get_next()
+		while file_name != "":
+			var new_dir: Directory = Directory.new()
+			if dir.current_is_dir():
+				copy_dir(path + "/" + file_name, new_path)
+			else:
+				new_dir.copy(path + "/" + file_name, to + "/" + file_name)
+	else:
+		print("Unable to load path: \"" + path)
+
+
+func get_name_from_path(path: String) -> String:
+	return path.split("/")[-1].split("\\")[-1]
+
+
+func get_parent_from_path(path: String) -> String:
+	return path.substr(0, len(path) - len(Util.get_name_from_path(path)) - 1)

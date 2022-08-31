@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Default.tres" type="Theme" id=1]
+[ext_resource path="res://Assets/Empty.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/UI/ProjectManager.gd" type="Script" id=3]
+
+[node name="ProjectManager" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 3 )
+sprite_icon = ExtResource( 2 )
+unknown_icon = ExtResource( 2 )
+
+[node name="Tree" type="Tree" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+allow_reselect = true
+allow_rmb_select = true
+
+[node name="FolderPopup" type="PopupMenu" parent="Tree"]
+margin_right = 112.0
+margin_bottom = 200.0
+items = [ "Add Folder", null, 0, false, false, 0, 0, null, "", false, "Add Sprite", null, 0, false, false, 1, 0, null, "", false, "", null, 0, false, false, -1, 0, null, "", true, "Rename", null, 0, false, false, 2, 0, null, "", false, "", null, 0, false, false, -1, 0, null, "", true, "Copy", null, 0, false, false, 3, 0, null, "", false, "Paste Into", null, 0, false, false, 4, 0, null, "", false, "", null, 0, false, false, -1, 0, null, "", true, "Delete", null, 0, false, false, 5, 0, null, "", false, "", null, 0, false, false, -1, 0, null, "", true, "Open in File Manager", null, 0, false, false, 6, 0, null, "", false ]
+
+[connection signal="item_activated" from="Tree" to="." method="_item_activated"]
+[connection signal="item_double_clicked" from="Tree" to="." method="_item_double_clicked"]
+[connection signal="item_rmb_selected" from="Tree" to="." method="_item_rmb_selected"]
+[connection signal="item_selected" from="Tree" to="." method="_item_selected"]
+[connection signal="id_pressed" from="Tree/FolderPopup" to="." method="_popup_id_pressed"]
