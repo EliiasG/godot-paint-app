@@ -37,6 +37,7 @@ func _get_open_folders() -> Array:
 func _draw_file(parent: TreeItem, path: String):
 	var new_item: TreeItem = _tree.create_item(parent)
 	var item_name: String = Util.get_name_from_path(path)
+	print(path)
 	new_item.set_text(0, item_name)
 	if item_name.ends_with(".res"):
 		new_item.set_icon(0, sprite_icon)
@@ -59,8 +60,9 @@ func _draw_directory(parent: TreeItem, path: String, open_folders: Array) -> voi
 			if dir.current_is_dir():
 				_draw_directory(new_item, path + "/" + file_name, open_folders)
 			else:
-				_draw_file(parent, path)
+				_draw_file(parent, path + "/" + file_name)
 			file_name = dir.get_next()
+		dir.list_dir_end()
 	else:
 		print("Unable to load path: \"" + path + "\", redrawing")
 		_redraw()
@@ -87,13 +89,24 @@ func _item_activated() -> void:
 
 
 func _item_double_clicked() -> void:
-	var path: String =  _file_dictionary[_tree.get_selected()]
-	if path is String:
-		print(path)
+	var path: String = get_selected_path()
+	if _is_sprite(path):
+		State.tab_manager.open_tab(SpriteProjectEditorTab.new(path))
+
+
+func _is_sprite(path: String) -> bool:
+	var dir: Directory = Directory.new()
+	return dir.file_exists(path) and path.ends_with(".res")
 
 
 func _item_rmb_selected(position: Vector2) -> void:
 	_popup.popup(Rect2(position, _popup.rect_size))
+
+
+func _format_sprite_name(sprite_name: String) -> String:
+	if sprite_name.ends_with(".res"):
+		return sprite_name
+	return sprite_name + ".res"
 
 
 func _popup_id_pressed(id: int) -> void:
@@ -102,16 +115,22 @@ func _popup_id_pressed(id: int) -> void:
 	match id:
 		0:
 			# Add Folder
-			pass
+			InputWindow.open(true, "Add Folder", "New Folder")
+			# not static typed because it can be null
+			var result = yield(InputWindow, "closed")
+			if result is String:
+				dir.make_dir(selected_path + "/" + result)
 		1:
 			# Add Sprite
-			pass
+			SpriteProjectSaver.create(selected_path + "/" + "Test" + ".res")
 		2:
 			# Rename
 			InputWindow.open(true, "Rename File", Util.get_name_from_path(selected_path))
 			# not static typed because it can be null
 			var result = yield(InputWindow, "closed")
 			if result is String:
+				if dir.file_exists(selected_path):
+					result = _format_sprite_name(result)
 				var new_path: String = Util.get_parent_from_path(selected_path) + "/" + result
 				if path == selected_path:
 					path = new_path

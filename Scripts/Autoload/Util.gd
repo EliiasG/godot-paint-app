@@ -23,19 +23,21 @@ func snap(vector: Vector2, grid_size: float):
 
 
 func copy_dir(path: String, to: String) -> void:
+	#TODO fix
 	var dir: Directory = Directory.new()
 	var new_path: String = to + "/" + get_name_from_path(path)
 	dir.make_dir(new_path)
-	print("Made dir: " + new_path)
 	if dir.open(path) == OK:
 		dir.list_dir_begin(true, true)
 		var file_name = dir.get_next()
 		while file_name != "":
+			print(file_name)
 			var new_dir: Directory = Directory.new()
 			if dir.current_is_dir():
 				copy_dir(path + "/" + file_name, new_path)
 			else:
 				new_dir.copy(path + "/" + file_name, to + "/" + file_name)
+		dir.list_dir_end()
 	else:
 		print("Unable to load path: \"" + path)
 

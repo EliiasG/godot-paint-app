@@ -42,13 +42,15 @@ func _close_index(index: int) -> void:
 		_content_container.remove_child(_content_container.get_child(index))
 		tabs.remove(index)
 	
-	if index == old_index and len(tabs) > 0:
-		_tab_changed(index)
+		if index == old_index and len(tabs) > 0:
+			_tab_changed(index - 1 if index != 0 else index)
 
 
 func _tab_changed(index: int) -> void:
 	var tab: Tab = tabs[index]
-	_content_container.get_child(old_index).visible = false
+	var old_content: Control = _content_container.get_child(old_index)
+	if old_content is Control:
+		old_content.visible = false
 	_content_container.get_child(index).visible = true
 	tab_close_display_policy = Tabs.CLOSE_BUTTON_SHOW_ACTIVE_ONLY if tab._can_be_closed() else Tabs.CLOSE_BUTTON_SHOW_NEVER
 	old_index = index

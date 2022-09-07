@@ -21,7 +21,7 @@ allow_rmb_select = true
 [node name="FolderPopup" type="PopupMenu" parent="Tree"]
 margin_right = 112.0
 margin_bottom = 200.0
-items = [ "Add Folder", null, 0, false, false, 0, 0, null, "", false, "Add Sprite", null, 0, false, false, 1, 0, null, "", false, "", null, 0, false, false, -1, 0, null, "", true, "Rename", null, 0, false, false, 2, 0, null, "", false, "", null, 0, false, false, -1, 0, null, "", true, "Copy", null, 0, false, false, 3, 0, null, "", false, "Paste Into", null, 0, false, false, 4, 0, null, "", false, "", null, 0, false, false, -1, 0, null, "", true, "Delete", null, 0, false, false, 5, 0, null, "", false, "", null, 0, false, false, -1, 0, null, "", true, "Open in File Manager", null, 0, false, false, 6, 0, null, "", false ]
+items = [ "Add Folder", null, 0, false, false, 0, 0, null, "", false, "Add Sprite", null, 0, false, false, 1, 0, null, "", false, "", null, 0, false, false, -1, 0, null, "", true, "Rename", null, 0, false, false, 2, 0, null, "", false, "BROKEN", null, 0, false, false, -1, 0, null, "", true, "Copy", null, 0, false, true, 3, 0, null, "", false, "Paste Into", null, 0, false, true, 4, 0, null, "", false, "", null, 0, false, false, -1, 0, null, "", true, "Delete", null, 0, false, false, 5, 0, null, "", false, "", null, 0, false, false, -1, 0, null, "", true, "Open in File Manager", null, 0, false, false, 6, 0, null, "", false ]
 
 [connection signal="item_activated" from="Tree" to="." method="_item_activated"]
 [connection signal="item_double_clicked" from="Tree" to="." method="_item_double_clicked"]
